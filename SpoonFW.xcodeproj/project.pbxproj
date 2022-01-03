@@ -9,12 +9,32 @@
 /* Begin PBXBuildFile section */
 		5C39B74F277E3640001DC168 /* SpoonFW.docc in Sources */ = {isa = PBXBuildFile; fileRef = 5C39B74E277E3640001DC168 /* SpoonFW.docc */; };
 		5C39B750277E3640001DC168 /* SpoonFW.h in Headers */ = {isa = PBXBuildFile; fileRef = 5C39B74D277E3640001DC168 /* SpoonFW.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		5C39B763277E370D001DC168 /* TimeSpanPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C39B758277E370D001DC168 /* TimeSpanPickerView.swift */; };
+		5C39B764277E370D001DC168 /* IntegerBadgeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C39B759277E370D001DC168 /* IntegerBadgeView.swift */; };
+		5C39B765277E370D001DC168 /* IntegerPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C39B75A277E370D001DC168 /* IntegerPickerView.swift */; };
+		5C39B766277E370D001DC168 /* URLExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C39B75C277E370D001DC168 /* URLExtension.swift */; };
+		5C39B767277E370D001DC168 /* TimeIntervalExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C39B75D277E370D001DC168 /* TimeIntervalExtension.swift */; };
+		5C39B768277E370D001DC168 /* ViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C39B75E277E370D001DC168 /* ViewExtension.swift */; };
+		5C39B769277E370D001DC168 /* ColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C39B75F277E370D001DC168 /* ColorExtension.swift */; };
+		5C39B76A277E370D001DC168 /* BindingExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C39B760277E370D001DC168 /* BindingExtension.swift */; };
+		5C39B76B277E370D001DC168 /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C39B761277E370D001DC168 /* StringExtension.swift */; };
+		5C39B76C277E370D001DC168 /* DateExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C39B762277E370D001DC168 /* DateExtension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		5C39B74A277E3640001DC168 /* SpoonFW.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SpoonFW.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5C39B74D277E3640001DC168 /* SpoonFW.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SpoonFW.h; sourceTree = "<group>"; };
 		5C39B74E277E3640001DC168 /* SpoonFW.docc */ = {isa = PBXFileReference; lastKnownFileType = folder.documentationcatalog; path = SpoonFW.docc; sourceTree = "<group>"; };
+		5C39B758277E370D001DC168 /* TimeSpanPickerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimeSpanPickerView.swift; sourceTree = "<group>"; };
+		5C39B759277E370D001DC168 /* IntegerBadgeView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IntegerBadgeView.swift; sourceTree = "<group>"; };
+		5C39B75A277E370D001DC168 /* IntegerPickerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IntegerPickerView.swift; sourceTree = "<group>"; };
+		5C39B75C277E370D001DC168 /* URLExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = URLExtension.swift; sourceTree = "<group>"; };
+		5C39B75D277E370D001DC168 /* TimeIntervalExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimeIntervalExtension.swift; sourceTree = "<group>"; };
+		5C39B75E277E370D001DC168 /* ViewExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewExtension.swift; sourceTree = "<group>"; };
+		5C39B75F277E370D001DC168 /* ColorExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorExtension.swift; sourceTree = "<group>"; };
+		5C39B760277E370D001DC168 /* BindingExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BindingExtension.swift; sourceTree = "<group>"; };
+		5C39B761277E370D001DC168 /* StringExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StringExtension.swift; sourceTree = "<group>"; };
+		5C39B762277E370D001DC168 /* DateExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateExtension.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -47,10 +67,36 @@
 		5C39B74C277E3640001DC168 /* SpoonFW */ = {
 			isa = PBXGroup;
 			children = (
+				5C39B75B277E370D001DC168 /* Extensions */,
+				5C39B757277E370D001DC168 /* Views */,
 				5C39B74D277E3640001DC168 /* SpoonFW.h */,
 				5C39B74E277E3640001DC168 /* SpoonFW.docc */,
 			);
 			path = SpoonFW;
+			sourceTree = "<group>";
+		};
+		5C39B757277E370D001DC168 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				5C39B758277E370D001DC168 /* TimeSpanPickerView.swift */,
+				5C39B759277E370D001DC168 /* IntegerBadgeView.swift */,
+				5C39B75A277E370D001DC168 /* IntegerPickerView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		5C39B75B277E370D001DC168 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				5C39B75C277E370D001DC168 /* URLExtension.swift */,
+				5C39B75D277E370D001DC168 /* TimeIntervalExtension.swift */,
+				5C39B75E277E370D001DC168 /* ViewExtension.swift */,
+				5C39B75F277E370D001DC168 /* ColorExtension.swift */,
+				5C39B760277E370D001DC168 /* BindingExtension.swift */,
+				5C39B761277E370D001DC168 /* StringExtension.swift */,
+				5C39B762277E370D001DC168 /* DateExtension.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -106,6 +152,7 @@
 			knownRegions = (
 				en,
 				Base,
+				de,
 			);
 			mainGroup = 5C39B740277E3640001DC168;
 			productRefGroup = 5C39B74B277E3640001DC168 /* Products */;
@@ -132,7 +179,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5C39B766277E370D001DC168 /* URLExtension.swift in Sources */,
+				5C39B767277E370D001DC168 /* TimeIntervalExtension.swift in Sources */,
+				5C39B76B277E370D001DC168 /* StringExtension.swift in Sources */,
+				5C39B764277E370D001DC168 /* IntegerBadgeView.swift in Sources */,
+				5C39B769277E370D001DC168 /* ColorExtension.swift in Sources */,
+				5C39B768277E370D001DC168 /* ViewExtension.swift in Sources */,
+				5C39B76C277E370D001DC168 /* DateExtension.swift in Sources */,
+				5C39B765277E370D001DC168 /* IntegerPickerView.swift in Sources */,
+				5C39B76A277E370D001DC168 /* BindingExtension.swift in Sources */,
 				5C39B74F277E3640001DC168 /* SpoonFW.docc in Sources */,
+				5C39B763277E370D001DC168 /* TimeSpanPickerView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -274,6 +331,7 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -302,6 +360,7 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

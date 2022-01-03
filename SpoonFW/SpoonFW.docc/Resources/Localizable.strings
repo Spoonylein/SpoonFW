@@ -1,0 +1,16 @@
+/* 
+  Localizable.strings
+  SpoonFW
+
+  Created by Jan Löffel on 07.11.21.
+  
+*/
+
+// IntegerPickerView
+"PickerTitleIntegerPicker" = "Integer Picker";
+
+// TimeSpanPickerView
+"DaysUnit" = "d";
+"HoursUnit" = "h";
+"MinutesUnit" = "m";
+"SecondsUnit" = "s";
