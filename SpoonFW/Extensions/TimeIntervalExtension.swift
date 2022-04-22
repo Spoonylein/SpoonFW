@@ -61,7 +61,7 @@ extension TimeInterval {
     /// - Parameters:
     ///   - timeSpan: The time interval.
     ///   - academic: If `true`, the string is formatted as "", otherwise "".
-    public static func timeSpanString(_ timeSpan: TimeInterval, academic: Bool = false, offset: TimeInterval = 0) -> String {
+    public static func timeSpanString(_ timeSpan: TimeInterval, academic: Bool = false, showSeconds: Bool = true, offset: TimeInterval = 0) -> String {
         var returnString: String = ""
         var days: Int = 0
         var hours: Int = 0
@@ -73,24 +73,45 @@ extension TimeInterval {
         minutes = getMinutes(timeSpan)
         seconds = getSeconds(timeSpan)
         
-        if academic {
-            
-            if days > 0 { returnString += "\(days)\(localizedString("DaysUnit"))" }
-            if hours > 0 { returnString += (returnString.isEmpty ? "\(hours)\(localizedString("HoursUnit"))" : " \(hours)\(localizedString("HoursUnit"))"  ) }
-            if minutes > 0 { returnString += returnString.isEmpty ? "\(minutes)\(localizedString("MinutesUnit"))" : " \(minutes)\(localizedString("MinutesUnit"))" }
-            if seconds > 0 { returnString += returnString.isEmpty ? "\(seconds)\(localizedString("SecondsUnit"))" : " \(seconds)\(localizedString("SecondsUnit"))" }
-            
-        } else {
-            
-            if days > 0 {
-                let daysUnitString = localizedString("DaysUnit")
-                returnString = String(format: "%0d\(daysUnitString) %0.2d:%0.2d:%0.2d", days, hours, minutes, seconds)
-            } else if hours > 0 {
-                returnString = String(format: "%0.2d:%0.2d:%0.2d", hours, minutes, seconds)
+        if showSeconds {
+            if academic {
+                
+                if days > 0 { returnString += "\(days)\(localizedString("DaysUnit", standardString: "d"))" }
+                if hours > 0 { returnString += (returnString.isEmpty ? "\(hours)\(localizedString("HoursUnit", standardString: "h"))" : " \(hours)\(localizedString("HoursUnit", standardString: "h"))"  ) }
+                if minutes > 0 { returnString += returnString.isEmpty ? "\(minutes)\(localizedString("MinutesUnit", standardString: "m"))" : " \(minutes)\(localizedString("MinutesUnit", standardString: "m"))" }
+                if seconds > 0 { returnString += returnString.isEmpty ? "\(seconds)\(localizedString("SecondsUnit", standardString: "s"))" : " \(seconds)\(localizedString("SecondsUnit", standardString: "s"))" }
+                
             } else {
-                returnString = String(format: "%0.2d:%0.2d", minutes, seconds)
+                
+                if days > 0 {
+                    let daysUnitString = localizedString("DaysUnit", standardString: "d")
+                    returnString = String(format: "%0d\(daysUnitString) %0.2d:%0.2d:%0.2d", days, hours, minutes, seconds)
+                } else if hours > 0 {
+                    returnString = String(format: "%0.2d:%0.2d:%0.2d", hours, minutes, seconds)
+                } else {
+                    returnString = String(format: "%0.2d:%0.2d", minutes, seconds)
+                }
+            }
+        } else {
+            if academic {
+                
+                if days > 0 { returnString += "\(days)\(localizedString("DaysUnit", standardString: "d"))" }
+                if hours > 0 { returnString += (returnString.isEmpty ? "\(hours)\(localizedString("HoursUnit", standardString: "h"))" : " \(hours)\(localizedString("HoursUnit", standardString: "h"))"  ) }
+                if minutes > 0 { returnString += returnString.isEmpty ? "\(minutes)\(localizedString("MinutesUnit", standardString: "m"))" : " \(minutes)\(localizedString("MinutesUnit", standardString: "m"))" }
+                
+            } else {
+                
+                if days > 0 {
+                    let daysUnitString = localizedString("DaysUnit", standardString: "d")
+                    returnString = String(format: "%0d\(daysUnitString) %0.2d:%0.2d", days, hours, minutes)
+                } else if hours > 0 {
+                    returnString = String(format: "%0.2d:%0.2d", hours, minutes)
+                } else {
+                    returnString = String(format: "%0.2d:%0.2d", minutes)
+                }
             }
         }
+
         
         if (offset != 0) {
             returnString += " +\(TimeInterval.timeSpanString(offset, academic: true))"
