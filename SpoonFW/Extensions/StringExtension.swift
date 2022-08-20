@@ -1,4 +1,4 @@
-//
+    //
 //  StringExtension.swift
 //  TiNo
 //
@@ -13,7 +13,6 @@ public extension String {
     func trim() -> String {
         return self.trimmingCharacters(in: CharacterSet(charactersIn: " "))
     }
-    
 }
 
 /// Returns a localized string from a main bundle's string file
@@ -23,7 +22,7 @@ public extension String {
 ///   - tableName: The name of the `*.strings` file. If `nil` then `Localizable.strings` will be used.
 ///
 ///   Copy this func to each bundle where you want to use localization.
-public func localizedString(_ key: String, standardString: String? = nil, table tableName: String? = nil) -> String {
+internal func localizedString(_ key: String, standardString: String? = nil, table tableName: String? = nil) -> String {
     
     /// This is the identifier of the bundle to use for localization.
     let bundleIdentifier = "SpoonSOFT.SpoonFW"
@@ -32,6 +31,7 @@ public func localizedString(_ key: String, standardString: String? = nil, table 
     if let bundle = Bundle.init(identifier: bundleIdentifier) {
         result = bundle.localizedString(forKey: key, value: standardString, table: tableName)
     }
+    
     return result
 
     /*

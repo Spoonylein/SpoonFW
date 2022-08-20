@@ -19,6 +19,7 @@
 		5C39B76A277E370D001DC168 /* BindingExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C39B760277E370D001DC168 /* BindingExtension.swift */; };
 		5C39B76B277E370D001DC168 /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C39B761277E370D001DC168 /* StringExtension.swift */; };
 		5C39B76C277E370D001DC168 /* DateExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C39B762277E370D001DC168 /* DateExtension.swift */; };
+		5CAD326C28A5783E00BCB9E8 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 5CAD326E28A5783E00BCB9E8 /* Localizable.strings */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -35,6 +36,7 @@
 		5C39B760277E370D001DC168 /* BindingExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BindingExtension.swift; sourceTree = "<group>"; };
 		5C39B761277E370D001DC168 /* StringExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StringExtension.swift; sourceTree = "<group>"; };
 		5C39B762277E370D001DC168 /* DateExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateExtension.swift; sourceTree = "<group>"; };
+		5CAD326D28A5783E00BCB9E8 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -67,6 +69,7 @@
 		5C39B74C277E3640001DC168 /* SpoonFW */ = {
 			isa = PBXGroup;
 			children = (
+				5CAD326E28A5783E00BCB9E8 /* Localizable.strings */,
 				5C39B75B277E370D001DC168 /* Extensions */,
 				5C39B757277E370D001DC168 /* Views */,
 				5C39B74D277E3640001DC168 /* SpoonFW.h */,
@@ -88,13 +91,13 @@
 		5C39B75B277E370D001DC168 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
-				5C39B75C277E370D001DC168 /* URLExtension.swift */,
-				5C39B75D277E370D001DC168 /* TimeIntervalExtension.swift */,
-				5C39B75E277E370D001DC168 /* ViewExtension.swift */,
-				5C39B75F277E370D001DC168 /* ColorExtension.swift */,
 				5C39B760277E370D001DC168 /* BindingExtension.swift */,
-				5C39B761277E370D001DC168 /* StringExtension.swift */,
+				5C39B75F277E370D001DC168 /* ColorExtension.swift */,
 				5C39B762277E370D001DC168 /* DateExtension.swift */,
+				5C39B761277E370D001DC168 /* StringExtension.swift */,
+				5C39B75D277E370D001DC168 /* TimeIntervalExtension.swift */,
+				5C39B75C277E370D001DC168 /* URLExtension.swift */,
+				5C39B75E277E370D001DC168 /* ViewExtension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -169,6 +172,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5CAD326C28A5783E00BCB9E8 /* Localizable.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -194,6 +198,17 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		5CAD326E28A5783E00BCB9E8 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				5CAD326D28A5783E00BCB9E8 /* en */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		5C39B751277E3640001DC168 /* Debug */ = {
@@ -326,6 +341,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEFINES_MODULE = YES;
+				DEVELOPMENT_ASSET_PATHS = "";
 				DEVELOPMENT_TEAM = J642D97843;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
@@ -344,9 +360,10 @@
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
 				SUPPORTS_MACCATALYST = YES;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = "1,2,6";
 			};
 			name = Debug;
 		};
@@ -356,6 +373,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEFINES_MODULE = YES;
+				DEVELOPMENT_ASSET_PATHS = "";
 				DEVELOPMENT_TEAM = J642D97843;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
@@ -374,9 +392,10 @@
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
 				SUPPORTS_MACCATALYST = YES;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = "1,2,6";
 			};
 			name = Release;
 		};

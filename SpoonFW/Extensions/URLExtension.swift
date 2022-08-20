@@ -1,6 +1,6 @@
 //
 //  URLExtension.swift
-//  TiNo
+//  SpoonFW
 //
 //  Created by Jan Löffel on 10.10.21.
 //
@@ -9,7 +9,7 @@ import Foundation
 import SwiftUI
 
 extension URL {
-    /// Creates a image from given system name, saves it to disk and return a URL to it.
+    /// Creates a image from given system image name, saves it to disk and return a URL to it.
     public static func createLocalUrl(forSystemImageNamed name: String) -> URL? {
         let guid = UUID()
         let fileManager = FileManager.default
