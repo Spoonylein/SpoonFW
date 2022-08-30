@@ -61,7 +61,7 @@ extension TimeInterval {
     /// - Parameters:
     ///   - timeSpan: The time interval.
     ///   - academic: If `true`, the string is formatted as "", otherwise "".
-    public static func timeSpanString(_ timeSpan: TimeInterval, academic: Bool = false, showSeconds: Bool = true, offset: TimeInterval = 0) -> String {
+    public static func timeSpanString(_ timeSpan: TimeInterval, academic: Bool = false, showSeconds: Bool = true, showNull: Bool = false, offset: TimeInterval = 0) -> String {
         var returnString: String = ""
         var days: Int = 0
         var hours: Int = 0
@@ -111,7 +111,10 @@ extension TimeInterval {
                 }
             }
         }
-
+        
+        if showNull && days == 0 && hours == 0 && minutes == 0 && seconds == 0 {
+            returnString = "0"
+        }
         
         if (offset != 0) {
             returnString += " +\(TimeInterval.timeSpanString(offset, academic: true))"

@@ -13,6 +13,10 @@ public extension String {
     func trim() -> String {
         return self.trimmingCharacters(in: CharacterSet(charactersIn: " "))
     }
+    
+    func left(idx: Int = 0) -> String {
+            String(self[index(startIndex, offsetBy: idx)])
+        }
 }
 
 /// Returns a localized string from a main bundle's string file
