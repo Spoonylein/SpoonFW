@@ -53,7 +53,7 @@ extension TimeInterval {
     ///   - minute: The number of minutes in the new time interval.
     ///   - second: The number of seconds in the new time interval.
     /// - Returns: The new `TimeInterval`.
-    public static func timeSpan(day: Int, hour: Int, minute: Int, second: Int) -> TimeInterval {
+    public static func timeSpan(day: Int = 0, hour: Int = 0, minute: Int = 0, second: Int = 0) -> TimeInterval {
         return (TimeInterval)(day * 24 * 60 * 60 + hour * 60 * 60 + minute * 60 + second)
     }
     
