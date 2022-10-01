@@ -20,6 +20,7 @@
 		5C39B76B277E370D001DC168 /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C39B761277E370D001DC168 /* StringExtension.swift */; };
 		5C39B76C277E370D001DC168 /* DateExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C39B762277E370D001DC168 /* DateExtension.swift */; };
 		5CAD326C28A5783E00BCB9E8 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 5CAD326E28A5783E00BCB9E8 /* Localizable.strings */; };
+		5CD9CCD928E86A040043C0E0 /* GeoController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CD9CCD828E86A040043C0E0 /* GeoController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -37,6 +38,7 @@
 		5C39B761277E370D001DC168 /* StringExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StringExtension.swift; sourceTree = "<group>"; };
 		5C39B762277E370D001DC168 /* DateExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateExtension.swift; sourceTree = "<group>"; };
 		5CAD326D28A5783E00BCB9E8 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		5CD9CCD828E86A040043C0E0 /* GeoController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GeoController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -70,6 +72,7 @@
 			isa = PBXGroup;
 			children = (
 				5CAD326E28A5783E00BCB9E8 /* Localizable.strings */,
+				5CD9CCDA28E86A180043C0E0 /* Controllers */,
 				5C39B75B277E370D001DC168 /* Extensions */,
 				5C39B757277E370D001DC168 /* Views */,
 				5C39B74D277E3640001DC168 /* SpoonFW.h */,
@@ -100,6 +103,14 @@
 				5C39B75E277E370D001DC168 /* ViewExtension.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		5CD9CCDA28E86A180043C0E0 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				5CD9CCD828E86A040043C0E0 /* GeoController.swift */,
+			);
+			path = Controllers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -187,6 +198,7 @@
 				5C39B767277E370D001DC168 /* TimeIntervalExtension.swift in Sources */,
 				5C39B76B277E370D001DC168 /* StringExtension.swift in Sources */,
 				5C39B764277E370D001DC168 /* IntegerBadgeView.swift in Sources */,
+				5CD9CCD928E86A040043C0E0 /* GeoController.swift in Sources */,
 				5C39B769277E370D001DC168 /* ColorExtension.swift in Sources */,
 				5C39B768277E370D001DC168 /* ViewExtension.swift in Sources */,
 				5C39B76C277E370D001DC168 /* DateExtension.swift in Sources */,
@@ -264,7 +276,6 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -323,7 +334,6 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -338,6 +348,8 @@
 		5C39B754277E3640001DC168 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "Apple Development";
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEFINES_MODULE = YES;
@@ -349,7 +361,6 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -358,8 +369,10 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = SpoonSOFT.SpoonFW;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SKIP_INSTALL = YES;
-				SUPPORTS_MACCATALYST = YES;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SUPPORTS_MACCATALYST = NO;
 				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -370,6 +383,8 @@
 		5C39B755277E3640001DC168 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "Apple Development";
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEFINES_MODULE = YES;
@@ -381,7 +396,6 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -390,8 +404,10 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = SpoonSOFT.SpoonFW;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SKIP_INSTALL = YES;
-				SUPPORTS_MACCATALYST = YES;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SUPPORTS_MACCATALYST = NO;
 				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;

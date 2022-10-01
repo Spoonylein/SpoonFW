@@ -13,7 +13,10 @@ public extension Color {
     /// - Parameter percentage: The brightness value will be increased by this percentage value
     func lighter(by percentage: CGFloat = 25.0) -> Color {
         if percentage <= 0.0 { return self }
+
+        return self.brightness(percentage / 100.0) as! Color
         
+        /*
         var h: CGFloat = 0.0
         var s: CGFloat = 0.0
         var b: CGFloat = 0.0
@@ -26,6 +29,7 @@ public extension Color {
                              saturation: max(s - (s / 100.0 * percentage), 0.0),
                              brightness: min(b + (b / 100.0 * percentage), 1.0),
                              alpha: a))
+        */
     }
     
     /// Darkens the `Color` object by given percentage
@@ -33,6 +37,9 @@ public extension Color {
     func darker(by percentage: CGFloat = 25.0) -> Color {
         if percentage <= 0.0 { return self }
         
+        return self.brightness(percentage / -100.0) as! Color
+
+        /*
         var h: CGFloat = 0.0
         var s: CGFloat = 0.0
         var b: CGFloat = 0.0
@@ -45,5 +52,6 @@ public extension Color {
                              saturation: min(s + (s / 100.0 * percentage), 1.0),
                              brightness: max(b - (b / 100.0 * percentage), 0.0),
                              alpha: a))
+        */
     }
 }

@@ -9,7 +9,7 @@ import SwiftUI
 
 public struct IntegerBadgeView: View {
     @Binding var value: Int
-    var backgroundColor: Color = Color(UIColor.systemRed)
+    var backgroundColor: Color = Color.red
     var foregroundColor: Color = Color.white
     var borderColor: Color? = nil
     
@@ -34,7 +34,7 @@ public struct IntegerBadgeView: View {
         }
     }
     
-    public init(value: Binding<Int>, backgroundColor: Color = Color(UIColor.systemRed), foregroundColor: Color = Color.white, borderColor: Color? = nil) {
+    public init(value: Binding<Int>, backgroundColor: Color = Color.red, foregroundColor: Color = Color.white, borderColor: Color? = nil) {
         self._value = value
         self.backgroundColor = backgroundColor
         self.foregroundColor = foregroundColor
