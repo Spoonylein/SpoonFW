@@ -7,6 +7,7 @@
 
 import Foundation
 import CoreLocation
+import MapKit
 
 public class GeoController: NSObject, ObservableObject, CLLocationManagerDelegate {
 
@@ -37,6 +38,46 @@ public class GeoController: NSObject, ObservableObject, CLLocationManagerDelegat
         case .restricted: return "restricted"
         case .denied: return "denied"
         default: return "unknown"
+        }
+    }
+
+    public static func convertTap(at point: CGPoint, for mapSize: CGSize, in region: MKCoordinateRegion) -> CLLocationCoordinate2D {
+        let lat = region.center.latitude
+        let lon = region.center.longitude
+        
+        let mapCenter = CGPoint(x: mapSize.width / 2.0, y: mapSize.height / 2.0)
+        
+        // X
+        let xValue = (point.x - mapCenter.x) / mapCenter.x
+        let xSpan = xValue * region.span.longitudeDelta / 2.0
+        
+        // Y
+        let yValue = (point.y - mapCenter.y) / mapCenter.y
+        let ySpan = yValue * region.span.latitudeDelta / 2.0
+        
+        return CLLocationCoordinate2D(latitude: lat - ySpan, longitude: lon + xSpan)
+    }
+    
+    public func lookUpLocation(location: CLLocationCoordinate2D?, completionHandler: @escaping (CLPlacemark?)
+                    -> Void ) {
+        // Use the last reported location.
+        if let lastLocation = location {
+            // Look up the location and pass it to the completion handler
+            geocoder.reverseGeocodeLocation(CLLocation(latitude: lastLocation.latitude, longitude: lastLocation.longitude),
+                        completionHandler: { (placemarks, error) in
+                if error == nil {
+                    let firstLocation = placemarks?.first
+                    completionHandler(firstLocation)
+                }
+                else {
+                 // An error occurred during geocoding.
+                    completionHandler(nil)
+                }
+            })
+        }
+        else {
+            // No location was available.
+            completionHandler(nil)
         }
     }
 
