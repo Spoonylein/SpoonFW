@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5C0849FC28F57DA8001BAC41 /* PlacemarkView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C0849FB28F57DA8001BAC41 /* PlacemarkView.swift */; };
 		5C39B74F277E3640001DC168 /* SpoonFW.docc in Sources */ = {isa = PBXBuildFile; fileRef = 5C39B74E277E3640001DC168 /* SpoonFW.docc */; };
 		5C39B750277E3640001DC168 /* SpoonFW.h in Headers */ = {isa = PBXBuildFile; fileRef = 5C39B74D277E3640001DC168 /* SpoonFW.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		5C39B763277E370D001DC168 /* TimeSpanPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C39B758277E370D001DC168 /* TimeSpanPickerView.swift */; };
@@ -19,11 +20,13 @@
 		5C39B76A277E370D001DC168 /* BindingExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C39B760277E370D001DC168 /* BindingExtension.swift */; };
 		5C39B76B277E370D001DC168 /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C39B761277E370D001DC168 /* StringExtension.swift */; };
 		5C39B76C277E370D001DC168 /* DateExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C39B762277E370D001DC168 /* DateExtension.swift */; };
+		5C7DEECD28F9A88F0013FD20 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C7DEECC28F9A88F0013FD20 /* ViewController.swift */; };
 		5CAD326C28A5783E00BCB9E8 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 5CAD326E28A5783E00BCB9E8 /* Localizable.strings */; };
 		5CD9CCD928E86A040043C0E0 /* GeoController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CD9CCD828E86A040043C0E0 /* GeoController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		5C0849FB28F57DA8001BAC41 /* PlacemarkView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlacemarkView.swift; sourceTree = "<group>"; };
 		5C39B74A277E3640001DC168 /* SpoonFW.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SpoonFW.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5C39B74D277E3640001DC168 /* SpoonFW.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SpoonFW.h; sourceTree = "<group>"; };
 		5C39B74E277E3640001DC168 /* SpoonFW.docc */ = {isa = PBXFileReference; lastKnownFileType = folder.documentationcatalog; path = SpoonFW.docc; sourceTree = "<group>"; };
@@ -37,6 +40,7 @@
 		5C39B760277E370D001DC168 /* BindingExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BindingExtension.swift; sourceTree = "<group>"; };
 		5C39B761277E370D001DC168 /* StringExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StringExtension.swift; sourceTree = "<group>"; };
 		5C39B762277E370D001DC168 /* DateExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateExtension.swift; sourceTree = "<group>"; };
+		5C7DEECC28F9A88F0013FD20 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		5CAD326D28A5783E00BCB9E8 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		5CD9CCD828E86A040043C0E0 /* GeoController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GeoController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -84,6 +88,7 @@
 		5C39B757277E370D001DC168 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				5C0849FB28F57DA8001BAC41 /* PlacemarkView.swift */,
 				5C39B758277E370D001DC168 /* TimeSpanPickerView.swift */,
 				5C39B759277E370D001DC168 /* IntegerBadgeView.swift */,
 				5C39B75A277E370D001DC168 /* IntegerPickerView.swift */,
@@ -109,6 +114,7 @@
 			isa = PBXGroup;
 			children = (
 				5CD9CCD828E86A040043C0E0 /* GeoController.swift */,
+				5C7DEECC28F9A88F0013FD20 /* ViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -197,6 +203,8 @@
 				5C39B766277E370D001DC168 /* URLExtension.swift in Sources */,
 				5C39B767277E370D001DC168 /* TimeIntervalExtension.swift in Sources */,
 				5C39B76B277E370D001DC168 /* StringExtension.swift in Sources */,
+				5C0849FC28F57DA8001BAC41 /* PlacemarkView.swift in Sources */,
+				5C7DEECD28F9A88F0013FD20 /* ViewController.swift in Sources */,
 				5C39B764277E370D001DC168 /* IntegerBadgeView.swift in Sources */,
 				5CD9CCD928E86A040043C0E0 /* GeoController.swift in Sources */,
 				5C39B769277E370D001DC168 /* ColorExtension.swift in Sources */,

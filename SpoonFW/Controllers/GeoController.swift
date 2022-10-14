@@ -8,6 +8,18 @@
 import Foundation
 import CoreLocation
 import MapKit
+import Contacts
+
+public struct LocationAnnotation: Identifiable {
+    public let coordinate: CLLocationCoordinate2D
+    public let title: String?
+    public let id: UUID = UUID()
+    
+    public init(coordinate: CLLocationCoordinate2D, title: String? = nil) {
+        self.coordinate = coordinate
+        self.title = title
+    }
+}
 
 public class GeoController: NSObject, ObservableObject, CLLocationManagerDelegate {
 
@@ -56,6 +68,48 @@ public class GeoController: NSObject, ObservableObject, CLLocationManagerDelegat
         let ySpan = yValue * region.span.latitudeDelta / 2.0
         
         return CLLocationCoordinate2D(latitude: lat - ySpan, longitude: lon + xSpan)
+    }
+
+    public static func postalAddress(country: String = "", postalCode: String = "", city: String = "", street: String = "", houseNumber: String = "") -> CNPostalAddress {
+        let result = CNMutablePostalAddress()
+        result.country = country
+        result.postalCode = postalCode
+        result.city = city
+        result.street = String(format: "%@ %@", street, houseNumber)
+        
+        return result
+    }
+
+    public static func postalAddressString(country: String = "", postalCode: String = "", city: String = "", street: String = "", houseNumber: String = "") -> String {
+        let result = postalAddress(country: country, postalCode: postalCode, city: city, street: street, houseNumber: houseNumber)
+        
+        let postalAddressFormatter = CNPostalAddressFormatter()
+        postalAddressFormatter.style = .mailingAddress
+
+        return postalAddressFormatter.string(from: result)
+    }
+    
+    public static func postalAddressString(placemark: CLPlacemark?) -> String {
+        var result: String = ""
+        
+        let postalAddressFormatter = CNPostalAddressFormatter()
+        postalAddressFormatter.style = .mailingAddress
+        
+        if let pm = placemark, let postalAddress = pm.postalAddress {
+            result = postalAddressFormatter.string(from: postalAddress)
+        }
+        
+        return result
+    }
+    
+    public func placemark(postalAddress: CNPostalAddress) -> CLPlacemark? {
+        var result: CLPlacemark? = nil
+        
+        geocoder.geocodePostalAddress(postalAddress) { placemarks, error in
+                result = placemarks?.first
+        }
+        
+        return result
     }
     
     public func lookUpLocation(location: CLLocationCoordinate2D?, completionHandler: @escaping (CLPlacemark?)
