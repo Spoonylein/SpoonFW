@@ -26,8 +26,8 @@ public struct IntegerPickerView: View {
         let numbers: [Int] = Array(stride(from: min, through: max, by: step))
 
         let charCount: Int = Int("\(numbers.max()!)".count)
-        let w: CGFloat = 20.0 * CGFloat(charCount)
-        let h: CGFloat = 64.0
+        let w: CGFloat = 17.0 * CGFloat(charCount) + 25.5
+        let h: CGFloat = 80.0
         let formatString: String = "%0\(charCount)d"
 
         HStack(alignment: .center, spacing: 2) {
@@ -41,6 +41,7 @@ public struct IntegerPickerView: View {
                 ForEach(numbers, id: \.self) {number in
                     Text(String(format: formatString, number))
                         .font(.system(.title, design: .monospaced))
+                        .fixedSize()
                 }
             }
             .frame(width: w, height: h)
