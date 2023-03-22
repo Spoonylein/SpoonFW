@@ -17,10 +17,10 @@ public struct IntegerPickerView: View {
     
     /// The integer value to bind to.
     @Binding var value: Int
-    @State var min: Int
-    @State var max: Int
-    @State var step: Int
-    @State var unitString: String
+    @State private var min: Int
+    @State private var max: Int
+    @State private var step: Int
+    @State private var unitString: String
     
     public var body: some View {
         let numbers: [Int] = Array(stride(from: min, through: max, by: step))
