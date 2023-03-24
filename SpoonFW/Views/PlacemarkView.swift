@@ -28,7 +28,7 @@ import MapKit
         List {
             Section {
                 Label {
-                    Text(LocalizedStringKey("LocationViewLocationName"))
+                    Text(LocalizedStringKey("PlacemarkViewTitle"))
                     Spacer()
                     Text(locationName)
                 } icon: {
@@ -70,7 +70,7 @@ import MapKit
                 .frame(minHeight: 300)
                 .padding(.vertical)
             } footer: {
-                Label(LocalizedStringKey("LocationViewMapFooter"), systemImage: "info.circle")
+                Label(LocalizedStringKey("PlacemarkViewFooter"), systemImage: "info.circle")
             }
             
         }
@@ -78,7 +78,6 @@ import MapKit
             mapRegion = MKCoordinateRegion(center: CLLocationCoordinate2D(latitude: latitude, longitude: longitude), latitudinalMeters: 500, longitudinalMeters: 500)
             annotations = [LocationAnnotation(coordinate: CLLocationCoordinate2D(latitude: latitude, longitude: longitude), title: locationName)]
         }
-        .navigationTitle(LocalizedStringKey("LocationViewTitle"))
     }
 }
 

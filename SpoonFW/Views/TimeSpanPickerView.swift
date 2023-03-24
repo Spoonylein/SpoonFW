@@ -30,8 +30,8 @@ public struct TimeSpanPickerView: View {
     public var body: some View {
         let maxTimeSpan = TimeInterval((maxDays * 24 * 60 * 60) + (maxHours * 60 * 60) + (maxMinutes * 60) + maxSeconds)
 
-        VStack(spacing: 8) {
-            HStack(spacing: 8) {
+        VStack() {
+            HStack() {
                 IntegerPickerView(value: $day, min: minDays, max: maxDays, step: daysStep, unitString: localizedString("DaysUnit"))
                 IntegerPickerView(value: $hour, min: minHours, max: maxHours, step: hoursStep, unitString: localizedString("HoursUnit"))
                 IntegerPickerView(value: $minute, min: minMinutes, max: maxMinutes, step: minutesStep, unitString: localizedString("MinutesUnit"))
@@ -65,7 +65,7 @@ public struct TimeSpanPickerView: View {
             .font(.footnote)
 
         }
-        .padding(8)
+        .padding()
         .onAppear {
             calcTimeComponents()
         }

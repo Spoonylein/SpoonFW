@@ -14,3 +14,7 @@
 "HoursUnit" = "h";
 "MinutesUnit" = "m";
 "SecondsUnit" = "s";
+
+// PlacemarkView
+"PlacemarkViewTitle" = "Map";
+"PlacemarkViewFooter" = "Tap to set location. Tap and hold for current location.";
