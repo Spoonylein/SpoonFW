@@ -26,8 +26,6 @@ public struct IntegerPickerView: View {
         let numbers: [Int] = Array(stride(from: min, through: max, by: step))
 
         let charCount: Int = Int("\(numbers.max()!)".count)
-        let w: CGFloat = 17.0 * CGFloat(charCount) + 25.5
-        let h: CGFloat = 80.0
         let formatString: String = "%0\(charCount)d"
 
         HStack(alignment: .center, spacing: 2) {
@@ -44,7 +42,7 @@ public struct IntegerPickerView: View {
                         .fixedSize()
                 }
             }
-            .frame(width: w, height: h)
+            .frame(maxWidth: .infinity)
             .clipped()
             .mask(LinearGradient(gradient: alphaGradient, startPoint: .top, endPoint: .bottom).luminanceToAlpha())
             
