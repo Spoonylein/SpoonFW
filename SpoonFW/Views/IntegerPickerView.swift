@@ -28,30 +28,24 @@ public struct IntegerPickerView: View {
         let charCount: Int = Int("\(numbers.max()!)".count)
         let formatString: String = "%0\(charCount)d"
 
-        HStack(alignment: .center, spacing: 2) {
-            let alphaGradient: Gradient = Gradient(stops:
-                                                    [Gradient.Stop(color: Color.black, location: 0.0),
-                                                     Gradient.Stop(color: Color.white, location: 0.33),
-                                                     Gradient.Stop(color: Color.white, location: 0.67),
-                                                     Gradient.Stop(color: Color.black, location: 1.0)])
-            
-            Picker(selection: $value, label: Text(localizedString("PickerTitleIntegerPicker"))) {
-                ForEach(numbers, id: \.self) {number in
-                    Text(String(format: formatString, number))
-                        .font(.system(.title, design: .monospaced))
-                        .fixedSize()
+        HStack(spacing: 0) {
+                Picker(selection: $value, label: EmptyView())  {
+                    ForEach(numbers, id: \.self) {number in
+                        Text(String(format: formatString, number))
+                            .tag(number)
+                            .font(.system(.body, design: .monospaced))
+                    }
                 }
-            }
-            .frame(maxWidth: .infinity)
-            .clipped()
-            .mask(LinearGradient(gradient: alphaGradient, startPoint: .top, endPoint: .bottom).luminanceToAlpha())
             
             if !unitString.trim().isEmpty {
                 Text(unitString)
-                    .font(.system(.title2, design: .monospaced))
+                    .font(.callout)
+                    .fontWeight(.light)
+                    .padding(.leading, -5)
             }
         }
-        .fixedSize()
+        .animation(.default, value: value)
+        .pickerStyle(.wheel)
     }
     
     public init(value: Binding<Int>, min: Int = 0, max: Int = 100, step: Int = 1, unitString: String = "") {
@@ -65,7 +59,8 @@ public struct IntegerPickerView: View {
 
 struct IntegerPickerView_Previews: PreviewProvider {
     static var previews: some View {
-        IntegerPickerView(value: .constant(10), unitString: localizedString("DaysUnit"))
+        IntegerPickerView(value: .constant(42), unitString: localizedString("DaysUnit"))
+            .previewLayout(.sizeThatFits)
     }
 }
 

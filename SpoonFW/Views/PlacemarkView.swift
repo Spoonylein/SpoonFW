@@ -7,24 +7,23 @@
 
 import SwiftUI
 import MapKit
-
- public struct PlacemarkView: View {
+public struct PlacemarkView: View {
     @Binding var latitude: Double
     @Binding var longitude: Double
     @Binding var locationName: String
-
+    
     @ObservedObject var geoController: GeoController
     @State private var mapRegion: MKCoordinateRegion = MKCoordinateRegion()
     @State private var annotations: [LocationAnnotation] = []
     
-     public init(latitude: Binding<Double>, longitude: Binding<Double>, locationName: Binding<String>, geoController: GeoController) {
-         self._latitude = latitude
-         self._longitude = longitude
-         self._locationName = locationName
-         self.geoController = geoController
-     }
-     
-     public var body: some View {
+    public init(latitude: Binding<Double>, longitude: Binding<Double>, locationName: Binding<String>, geoController: GeoController) {
+        self._latitude = latitude
+        self._longitude = longitude
+        self._locationName = locationName
+        self.geoController = geoController
+    }
+    
+    public var body: some View {
         List {
             Section {
                 Label {
@@ -34,7 +33,7 @@ import MapKit
                 } icon: {
                     Image(systemName: "mappin.square")
                 }
-
+                
                 GeometryReader(content: { proxy in
                     Map(coordinateRegion: $mapRegion, annotationItems: annotations, annotationContent: { annotation in
                         MapMarker(coordinate: annotation.coordinate)
@@ -86,3 +85,4 @@ struct PlacemarkView_Previews: PreviewProvider {
         PlacemarkView(latitude: .constant(0), longitude: .constant(0), locationName: .constant("PlacemarkName"), geoController: GeoController())
     }
 }
+

@@ -35,4 +35,16 @@ extension View {
             self
         }
     }
+    
+    /// Add a glow effect to the view.
+    /// - Parameters:
+    ///   - color: The color for the view, `.primary` if ommitted.
+    ///   - radius: The radius of the glow.
+    /// - Returns: The `View` itself with the glow added.
+    public func glow(color: Color = .primary, radius: Double) -> some View {
+        self
+            .shadow(color: color, radius: radius, x: 0, y: 0)
+            .shadow(color: color, radius: radius, x: -radius * 3.0, y: 0)
+            .shadow(color: color, radius: radius, x: radius * 3.0, y: 0)
+    }
 }

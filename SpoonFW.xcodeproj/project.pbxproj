@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		5C0849FC28F57DA8001BAC41 /* PlacemarkView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C0849FB28F57DA8001BAC41 /* PlacemarkView.swift */; };
+		5C0B0AFA29F06BE10037A9F2 /* UIColorValueTransformer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C0B0AF929F06BE10037A9F2 /* UIColorValueTransformer.swift */; };
 		5C39B74F277E3640001DC168 /* SpoonFW.docc in Sources */ = {isa = PBXBuildFile; fileRef = 5C39B74E277E3640001DC168 /* SpoonFW.docc */; };
 		5C39B750277E3640001DC168 /* SpoonFW.h in Headers */ = {isa = PBXBuildFile; fileRef = 5C39B74D277E3640001DC168 /* SpoonFW.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		5C39B763277E370D001DC168 /* TimeSpanPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C39B758277E370D001DC168 /* TimeSpanPickerView.swift */; };
@@ -27,6 +28,7 @@
 
 /* Begin PBXFileReference section */
 		5C0849FB28F57DA8001BAC41 /* PlacemarkView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlacemarkView.swift; sourceTree = "<group>"; };
+		5C0B0AF929F06BE10037A9F2 /* UIColorValueTransformer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColorValueTransformer.swift; sourceTree = "<group>"; };
 		5C39B74A277E3640001DC168 /* SpoonFW.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SpoonFW.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5C39B74D277E3640001DC168 /* SpoonFW.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SpoonFW.h; sourceTree = "<group>"; };
 		5C39B74E277E3640001DC168 /* SpoonFW.docc */ = {isa = PBXFileReference; lastKnownFileType = folder.documentationcatalog; path = SpoonFW.docc; sourceTree = "<group>"; };
@@ -56,6 +58,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5C0B0AF829F06BC30037A9F2 /* Core Data */ = {
+			isa = PBXGroup;
+			children = (
+				5C0B0AF929F06BE10037A9F2 /* UIColorValueTransformer.swift */,
+			);
+			path = "Core Data";
+			sourceTree = "<group>";
+		};
 		5C39B740277E3640001DC168 = {
 			isa = PBXGroup;
 			children = (
@@ -75,6 +85,7 @@
 		5C39B74C277E3640001DC168 /* SpoonFW */ = {
 			isa = PBXGroup;
 			children = (
+				5C0B0AF829F06BC30037A9F2 /* Core Data */,
 				5CAD326E28A5783E00BCB9E8 /* Localizable.strings */,
 				5CD9CCDA28E86A180043C0E0 /* Controllers */,
 				5C39B75B277E370D001DC168 /* Extensions */,
@@ -158,7 +169,7 @@
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
-				LastUpgradeCheck = 1420;
+				LastUpgradeCheck = 1430;
 				TargetAttributes = {
 					5C39B749277E3640001DC168 = {
 						CreatedOnToolsVersion = 13.2.1;
@@ -213,6 +224,7 @@
 				5C39B765277E370D001DC168 /* IntegerPickerView.swift in Sources */,
 				5C39B76A277E370D001DC168 /* BindingExtension.swift in Sources */,
 				5C39B74F277E3640001DC168 /* SpoonFW.docc in Sources */,
+				5C0B0AFA29F06BE10037A9F2 /* UIColorValueTransformer.swift in Sources */,
 				5C39B763277E370D001DC168 /* TimeSpanPickerView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -365,6 +377,7 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_MODULE_VERIFIER = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
@@ -374,17 +387,21 @@
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
+				MACOSX_DEPLOYMENT_TARGET = 13.0;
 				MARKETING_VERSION = 1.0;
+				MODULE_VERIFIER_SUPPORTED_LANGUAGES = "objective-c objective-c++";
+				MODULE_VERIFIER_SUPPORTED_LANGUAGE_STANDARDS = "gnu11 gnu++17";
 				PRODUCT_BUNDLE_IDENTIFIER = SpoonSOFT.SpoonFW;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SKIP_INSTALL = YES;
-				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx watchos watchsimulator";
 				SUPPORTS_MACCATALYST = NO;
-				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = YES;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2,6";
+				TARGETED_DEVICE_FAMILY = "1,2,4,6";
+				WATCHOS_DEPLOYMENT_TARGET = 9.0;
 			};
 			name = Debug;
 		};
@@ -400,6 +417,7 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_MODULE_VERIFIER = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
@@ -409,17 +427,21 @@
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
+				MACOSX_DEPLOYMENT_TARGET = 13.0;
 				MARKETING_VERSION = 1.0;
+				MODULE_VERIFIER_SUPPORTED_LANGUAGES = "objective-c objective-c++";
+				MODULE_VERIFIER_SUPPORTED_LANGUAGE_STANDARDS = "gnu11 gnu++17";
 				PRODUCT_BUNDLE_IDENTIFIER = SpoonSOFT.SpoonFW;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SKIP_INSTALL = YES;
-				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx watchos watchsimulator";
 				SUPPORTS_MACCATALYST = NO;
-				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = YES;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2,6";
+				TARGETED_DEVICE_FAMILY = "1,2,4,6";
+				WATCHOS_DEPLOYMENT_TARGET = 9.0;
 			};
 			name = Release;
 		};

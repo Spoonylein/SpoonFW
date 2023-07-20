@@ -9,18 +9,18 @@ import SwiftUI
 
 public struct TimeSpanPickerView: View {
     @Binding var timeSpan: TimeInterval
-    @State var minDays: Int
-    @State var maxDays: Int
-    @State var daysStep: Int
-    @State var minHours: Int
-    @State var maxHours: Int
-    @State var hoursStep: Int
-    @State var minMinutes: Int
-    @State var maxMinutes: Int
-    @State var minutesStep: Int
-    @State var minSeconds: Int
-    @State var maxSeconds: Int
-    @State var secondsStep: Int
+    @State private var minDays: Int
+    @State private var maxDays: Int
+    @State private var daysStep: Int
+    @State private var minHours: Int
+    @State private var maxHours: Int
+    @State private var hoursStep: Int
+    @State private var minMinutes: Int
+    @State private var maxMinutes: Int
+    @State private var minutesStep: Int
+    @State private var minSeconds: Int
+    @State private var maxSeconds: Int
+    @State private var secondsStep: Int
 
     @State private var day: Int = 0
     @State private var hour: Int = 0
@@ -30,13 +30,14 @@ public struct TimeSpanPickerView: View {
     public var body: some View {
         let maxTimeSpan = TimeInterval((maxDays * 24 * 60 * 60) + (maxHours * 60 * 60) + (maxMinutes * 60) + maxSeconds)
 
-        VStack() {
-            HStack() {
+        VStack {
+            HStack {
                 IntegerPickerView(value: $day, min: minDays, max: maxDays, step: daysStep, unitString: localizedString("DaysUnit"))
                 IntegerPickerView(value: $hour, min: minHours, max: maxHours, step: hoursStep, unitString: localizedString("HoursUnit"))
                 IntegerPickerView(value: $minute, min: minMinutes, max: maxMinutes, step: minutesStep, unitString: localizedString("MinutesUnit"))
                 IntegerPickerView(value: $second, min: minSeconds, max: maxSeconds, step: secondsStep, unitString: localizedString("SecondsUnit"))
             }
+//            .frame(height: 100)
 
             Divider()
             
@@ -63,9 +64,9 @@ public struct TimeSpanPickerView: View {
             }
             .foregroundColor(Color.accentColor)
             .font(.footnote)
+            .fontWeight(.light)
 
         }
-        .padding()
         .onAppear {
             calcTimeComponents()
         }
