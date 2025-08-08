@@ -85,8 +85,8 @@
 		5C39B74C277E3640001DC168 /* SpoonFW */ = {
 			isa = PBXGroup;
 			children = (
-				5C0B0AF829F06BC30037A9F2 /* Core Data */,
 				5CAD326E28A5783E00BCB9E8 /* Localizable.strings */,
+				5C0B0AF829F06BC30037A9F2 /* Core Data */,
 				5CD9CCDA28E86A180043C0E0 /* Controllers */,
 				5C39B75B277E370D001DC168 /* Extensions */,
 				5C39B757277E370D001DC168 /* Views */,
