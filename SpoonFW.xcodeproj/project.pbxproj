@@ -22,7 +22,7 @@
 		5C39B76B277E370D001DC168 /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C39B761277E370D001DC168 /* StringExtension.swift */; };
 		5C39B76C277E370D001DC168 /* DateExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C39B762277E370D001DC168 /* DateExtension.swift */; };
 		5C7DEECD28F9A88F0013FD20 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C7DEECC28F9A88F0013FD20 /* ViewController.swift */; };
-		5CAD326C28A5783E00BCB9E8 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 5CAD326E28A5783E00BCB9E8 /* Localizable.strings */; };
+		5C9AFBE72EB6B9F7005E49E5 /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = 5C9AFBE62EB6B9F7005E49E5 /* Localizable.xcstrings */; };
 		5CD9CCD928E86A040043C0E0 /* GeoController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CD9CCD828E86A040043C0E0 /* GeoController.swift */; };
 /* End PBXBuildFile section */
 
@@ -43,7 +43,7 @@
 		5C39B761277E370D001DC168 /* StringExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StringExtension.swift; sourceTree = "<group>"; };
 		5C39B762277E370D001DC168 /* DateExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateExtension.swift; sourceTree = "<group>"; };
 		5C7DEECC28F9A88F0013FD20 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		5CAD326D28A5783E00BCB9E8 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		5C9AFBE62EB6B9F7005E49E5 /* Localizable.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = Localizable.xcstrings; sourceTree = "<group>"; };
 		5CD9CCD828E86A040043C0E0 /* GeoController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GeoController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -85,7 +85,7 @@
 		5C39B74C277E3640001DC168 /* SpoonFW */ = {
 			isa = PBXGroup;
 			children = (
-				5CAD326E28A5783E00BCB9E8 /* Localizable.strings */,
+				5C9AFBE62EB6B9F7005E49E5 /* Localizable.xcstrings */,
 				5C0B0AF829F06BC30037A9F2 /* Core Data */,
 				5CD9CCDA28E86A180043C0E0 /* Controllers */,
 				5C39B75B277E370D001DC168 /* Extensions */,
@@ -202,7 +202,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5CAD326C28A5783E00BCB9E8 /* Localizable.strings in Resources */,
+				5C9AFBE72EB6B9F7005E49E5 /* Localizable.xcstrings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -232,17 +232,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXVariantGroup section */
-		5CAD326E28A5783E00BCB9E8 /* Localizable.strings */ = {
-			isa = PBXVariantGroup;
-			children = (
-				5CAD326D28A5783E00BCB9E8 /* en */,
-			);
-			name = Localizable.strings;
-			sourceTree = "<group>";
-		};
-/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		5C39B751277E3640001DC168 /* Debug */ = {
@@ -300,12 +289,14 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
 				STRING_CATALOG_GENERATE_SYMBOLS = YES;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
@@ -361,11 +352,13 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
 				STRING_CATALOG_GENERATE_SYMBOLS = YES;
 				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-O";
 				VALIDATE_PRODUCT = YES;
 				VERSIONING_SYSTEM = "apple-generic";
