@@ -59,7 +59,7 @@ public struct IntegerPickerView: View {
 
 struct IntegerPickerView_Previews: PreviewProvider {
     static var previews: some View {
-        IntegerPickerView(value: .constant(42), unitString: localizedString("DaysUnit"))
+        IntegerPickerView(value: .constant(42), unitString: String(localized: "DaysUnit"))
             .previewLayout(.sizeThatFits)
     }
 }

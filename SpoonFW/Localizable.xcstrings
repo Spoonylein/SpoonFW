@@ -29,7 +29,6 @@
     },
     "DaysUnit" : {
       "comment" : "TimeSpanPickerView",
-      "extractionState" : "migrated",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -40,7 +39,6 @@
       }
     },
     "HoursUnit" : {
-      "extractionState" : "migrated",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -51,7 +49,6 @@
       }
     },
     "MinutesUnit" : {
-      "extractionState" : "migrated",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -101,7 +98,6 @@
       }
     },
     "SecondsUnit" : {
-      "extractionState" : "migrated",
       "localizations" : {
         "en" : {
           "stringUnit" : {

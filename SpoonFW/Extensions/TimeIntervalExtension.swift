@@ -76,15 +76,15 @@ extension TimeInterval {
         if showSeconds {
             if academic {
                 
-                if days > 0 { returnString += "\(days)\(localizedString("DaysUnit", standardString: "d"))" }
-                if hours > 0 { returnString += (returnString.isEmpty ? "\(hours)\(localizedString("HoursUnit", standardString: "h"))" : " \(hours)\(localizedString("HoursUnit", standardString: "h"))"  ) }
-                if minutes > 0 { returnString += returnString.isEmpty ? "\(minutes)\(localizedString("MinutesUnit", standardString: "m"))" : " \(minutes)\(localizedString("MinutesUnit", standardString: "m"))" }
-                if seconds > 0 { returnString += returnString.isEmpty ? "\(seconds)\(localizedString("SecondsUnit", standardString: "s"))" : " \(seconds)\(localizedString("SecondsUnit", standardString: "s"))" }
+                if days > 0 { returnString += "\(days)\(String(localized: "DaysUnit"))" }
+                if hours > 0 { returnString += (returnString.isEmpty ? "\(hours)\(String(localized: "HoursUnit"))" : " \(hours)\(String(localized: "HoursUnit"))"  ) }
+                if minutes > 0 { returnString += returnString.isEmpty ? "\(minutes)\(String(localized: "MinutesUnit"))" : " \(minutes)\(String(localized: "MinutesUnit"))" }
+                if seconds > 0 { returnString += returnString.isEmpty ? "\(seconds)\(String(localized: "SecondsUnit"))" : " \(seconds)\(String(localized: "SecondsUnit"))" }
                 
             } else {
                 
                 if days > 0 {
-                    let daysUnitString = localizedString("DaysUnit", standardString: "d")
+                    let daysUnitString = String(localized: "DaysUnit")
                     returnString = String(format: "%0d\(daysUnitString) %0.2d:%0.2d:%0.2d", days, hours, minutes, seconds)
                 } else if hours > 0 {
                     returnString = String(format: "%0.2d:%0.2d:%0.2d", hours, minutes, seconds)
@@ -95,14 +95,14 @@ extension TimeInterval {
         } else {
             if academic {
                 
-                if days > 0 { returnString += "\(days)\(localizedString("DaysUnit", standardString: "d"))" }
-                if hours > 0 { returnString += (returnString.isEmpty ? "\(hours)\(localizedString("HoursUnit", standardString: "h"))" : " \(hours)\(localizedString("HoursUnit", standardString: "h"))"  ) }
-                if minutes > 0 { returnString += returnString.isEmpty ? "\(minutes)\(localizedString("MinutesUnit", standardString: "m"))" : " \(minutes)\(localizedString("MinutesUnit", standardString: "m"))" }
+                if days > 0 { returnString += "\(days)\(String(localized: "DaysUnit"))" }
+                if hours > 0 { returnString += (returnString.isEmpty ? "\(hours)\(String(localized: "HoursUnit"))" : " \(hours)\(String(localized: "HoursUnit"))"  ) }
+                if minutes > 0 { returnString += returnString.isEmpty ? "\(minutes)\(String(localized: "MinutesUnit"))" : " \(minutes)\(String(localized: "MinutesUnit"))" }
                 
             } else {
                 
                 if days > 0 {
-                    let daysUnitString = localizedString("DaysUnit", standardString: "d")
+                    let daysUnitString = String(localized: "DaysUnit")
                     returnString = String(format: "%0d\(daysUnitString) %0.2d:%0.2d", days, hours, minutes)
                 } else if hours > 0 {
                     returnString = String(format: "%0.2d:%0.2d", hours, minutes)

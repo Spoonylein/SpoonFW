@@ -33,10 +33,10 @@ public struct TimeSpanPickerView: View {
 
         VStack {
             HStack {
-                IntegerPickerView(value: $day, min: minDays, max: maxDays, step: daysStep, unitString: localizedString("DaysUnit", standardString: nil))
-                IntegerPickerView(value: $hour, min: minHours, max: maxHours, step: hoursStep, unitString: localizedString("HoursUnit", standardString: nil))
-                IntegerPickerView(value: $minute, min: minMinutes, max: maxMinutes, step: minutesStep, unitString: localizedString("MinutesUnit", standardString: nil))
-                IntegerPickerView(value: $second, min: minSeconds, max: maxSeconds, step: secondsStep, unitString: localizedString("SecondsUnit", standardString: nil))
+                IntegerPickerView(value: $day, min: minDays, max: maxDays, step: daysStep, unitString: String(localized: "DaysUnit"))
+                IntegerPickerView(value: $hour, min: minHours, max: maxHours, step: hoursStep, unitString: String(localized: "HoursUnit"))
+                IntegerPickerView(value: $minute, min: minMinutes, max: maxMinutes, step: minutesStep, unitString: String(localized: "MinutesUnit"))
+                IntegerPickerView(value: $second, min: minSeconds, max: maxSeconds, step: secondsStep, unitString: String(localized: "SecondsUnit"))
             }
 
             Divider()
